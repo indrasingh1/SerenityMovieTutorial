@@ -7410,3 +7410,9 @@ section.content > .s-DataGrid {
 .s-Default-MovieDialog .caption {
   width: 150px;
 }
+.s-Default-GenreDialog > .size {
+  width: 650px;
+}
+.s-Default-GenreDialog .caption {
+  width: 150px;
+}

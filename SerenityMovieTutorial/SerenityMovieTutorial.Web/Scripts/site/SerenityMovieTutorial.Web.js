@@ -373,6 +373,67 @@ var SerenityMovieTutorial;
 (function (SerenityMovieTutorial) {
     var Default;
     (function (Default) {
+        var GenreForm = /** @class */ (function (_super) {
+            __extends(GenreForm, _super);
+            function GenreForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!GenreForm.init) {
+                    GenreForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(GenreForm, [
+                        'Name', w0
+                    ]);
+                }
+                return _this;
+            }
+            GenreForm.formKey = 'Default.Genre';
+            return GenreForm;
+        }(Serenity.PrefixedContext));
+        Default.GenreForm = GenreForm;
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
+        var GenreRow;
+        (function (GenreRow) {
+            GenreRow.idProperty = 'GenreId';
+            GenreRow.nameProperty = 'Name';
+            GenreRow.localTextPrefix = 'Default.Genre';
+            GenreRow.deletePermission = 'Administration:General';
+            GenreRow.insertPermission = 'Administration:General';
+            GenreRow.readPermission = 'Administration:General';
+            GenreRow.updatePermission = 'Administration:General';
+        })(GenreRow = Default.GenreRow || (Default.GenreRow = {}));
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
+        var GenreService;
+        (function (GenreService) {
+            GenreService.baseUrl = 'Default/Genre';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                GenreService[x] = function (r, s, o) {
+                    return Q.serviceRequest(GenreService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(GenreService = Default.GenreService || (Default.GenreService = {}));
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
         var MovieForm = /** @class */ (function (_super) {
             __extends(MovieForm, _super);
             function MovieForm(prefix) {
@@ -588,7 +649,7 @@ var SerenityMovieTutorial;
 (function (SerenityMovieTutorial) {
     var Texts;
     (function (Texts) {
-        SerenityMovieTutorial['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Default: { Movie: { Description: 1, Kind: 1, MovieId: 1, ReleaseDate: 1, Runtime: 1, Storyline: 1, Title: 1, Year: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        SerenityMovieTutorial['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Default: { Genre: { GenreId: 1, Name: 1 }, Movie: { Description: 1, Kind: 1, MovieId: 1, ReleaseDate: 1, Runtime: 1, Storyline: 1, Title: 1, Year: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = SerenityMovieTutorial.Texts || (SerenityMovieTutorial.Texts = {}));
 })(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
 var SerenityMovieTutorial;
@@ -2761,6 +2822,56 @@ var SerenityMovieTutorial;
         }());
         Common.UserPreferenceStorage = UserPreferenceStorage;
     })(Common = SerenityMovieTutorial.Common || (SerenityMovieTutorial.Common = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
+        var GenreDialog = /** @class */ (function (_super) {
+            __extends(GenreDialog, _super);
+            function GenreDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Default.GenreForm(_this.idPrefix);
+                return _this;
+            }
+            GenreDialog.prototype.getFormKey = function () { return Default.GenreForm.formKey; };
+            GenreDialog.prototype.getIdProperty = function () { return Default.GenreRow.idProperty; };
+            GenreDialog.prototype.getLocalTextPrefix = function () { return Default.GenreRow.localTextPrefix; };
+            GenreDialog.prototype.getNameProperty = function () { return Default.GenreRow.nameProperty; };
+            GenreDialog.prototype.getService = function () { return Default.GenreService.baseUrl; };
+            GenreDialog.prototype.getDeletePermission = function () { return Default.GenreRow.deletePermission; };
+            GenreDialog.prototype.getInsertPermission = function () { return Default.GenreRow.insertPermission; };
+            GenreDialog.prototype.getUpdatePermission = function () { return Default.GenreRow.updatePermission; };
+            GenreDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GenreDialog);
+            return GenreDialog;
+        }(Serenity.EntityDialog));
+        Default.GenreDialog = GenreDialog;
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
+        var GenreGrid = /** @class */ (function (_super) {
+            __extends(GenreGrid, _super);
+            function GenreGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            GenreGrid.prototype.getColumnsKey = function () { return 'Default.Genre'; };
+            GenreGrid.prototype.getDialogType = function () { return Default.GenreDialog; };
+            GenreGrid.prototype.getIdProperty = function () { return Default.GenreRow.idProperty; };
+            GenreGrid.prototype.getInsertPermission = function () { return Default.GenreRow.insertPermission; };
+            GenreGrid.prototype.getLocalTextPrefix = function () { return Default.GenreRow.localTextPrefix; };
+            GenreGrid.prototype.getService = function () { return Default.GenreService.baseUrl; };
+            GenreGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GenreGrid);
+            return GenreGrid;
+        }(Serenity.EntityGrid));
+        Default.GenreGrid = GenreGrid;
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
 })(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
 var SerenityMovieTutorial;
 (function (SerenityMovieTutorial) {

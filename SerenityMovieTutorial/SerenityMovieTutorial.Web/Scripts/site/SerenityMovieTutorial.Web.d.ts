@@ -442,6 +442,54 @@ declare namespace SerenityMovieTutorial.Common {
 declare namespace SerenityMovieTutorial.Default {
 }
 declare namespace SerenityMovieTutorial.Default {
+    interface GenreForm {
+        Name: Serenity.StringEditor;
+    }
+    class GenreForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    interface GenreRow {
+        GenreId?: number;
+        Name?: string;
+    }
+    namespace GenreRow {
+        const idProperty = "GenreId";
+        const nameProperty = "Name";
+        const localTextPrefix = "Default.Genre";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            GenreId = "GenreId",
+            Name = "Name"
+        }
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    namespace GenreService {
+        const baseUrl = "Default/Genre";
+        function Create(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Default/Genre/Create",
+            Update = "Default/Genre/Update",
+            Delete = "Default/Genre/Delete",
+            Retrieve = "Default/Genre/Retrieve",
+            List = "Default/Genre/List"
+        }
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+}
+declare namespace SerenityMovieTutorial.Default {
     interface MovieForm {
         Title: Serenity.StringEditor;
         Description: Serenity.TextAreaEditor;
@@ -1067,6 +1115,30 @@ declare namespace SerenityMovieTutorial.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    class GenreDialog extends Serenity.EntityDialog<GenreRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: GenreForm;
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    class GenreGrid extends Serenity.EntityGrid<GenreRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GenreDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace SerenityMovieTutorial.Default {
