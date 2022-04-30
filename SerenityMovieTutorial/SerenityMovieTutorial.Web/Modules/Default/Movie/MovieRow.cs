@@ -29,14 +29,14 @@ namespace SerenityMovieTutorial.Default.Entities
             set { Fields.Title[this] = value; }
         }
 
-        [DisplayName("Description"), Size(1000)]
+        [DisplayName("Description"), Size(1000), QuickSearch]
         public String Description
         {
             get { return Fields.Description[this]; }
             set { Fields.Description[this] = value; }
         }
 
-        [DisplayName("Storyline")]
+        [DisplayName("Storyline"), QuickSearch]
         public String Storyline
         {
             get { return Fields.Storyline[this]; }
