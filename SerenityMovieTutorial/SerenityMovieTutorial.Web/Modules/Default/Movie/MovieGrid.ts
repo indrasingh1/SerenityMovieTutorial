@@ -1,6 +1,9 @@
 ﻿
 namespace SerenityMovieTutorial.Default {
 
+    import fld = MovieRow.Fields;
+
+
     @Serenity.Decorators.registerClass()
     export class MovieGrid extends Serenity.EntityGrid<MovieRow, any> {
         protected getColumnsKey() { return 'Default.Movie'; }
@@ -12,6 +15,15 @@ namespace SerenityMovieTutorial.Default {
 
         constructor(container: JQuery) {
             super(container);
+        }
+
+        protected getQuickSearchFields(): Serenity.QuickSearchField[] {
+            return [
+                { name: "", title: "all" },
+                { name: fld.Description, title: Q.text(fld.Description) },
+                { name: fld.Storyline, title: Q.text(fld.Storyline) },
+                { name: fld.Year, title: Q.text(fld.Title) }
+            ];
         }
     }
 }

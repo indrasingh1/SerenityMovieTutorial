@@ -2790,6 +2790,14 @@ var SerenityMovieTutorial;
             MovieGrid.prototype.getInsertPermission = function () { return Default.MovieRow.insertPermission; };
             MovieGrid.prototype.getLocalTextPrefix = function () { return Default.MovieRow.localTextPrefix; };
             MovieGrid.prototype.getService = function () { return Default.MovieService.baseUrl; };
+            MovieGrid.prototype.getQuickSearchFields = function () {
+                return [
+                    { name: "", title: "all" },
+                    { name: "Description" /* Description */, title: Q.text("Description" /* Description */) },
+                    { name: "Storyline" /* Storyline */, title: Q.text("Storyline" /* Storyline */) },
+                    { name: "Year" /* Year */, title: Q.text("Title" /* Title */) }
+                ];
+            };
             MovieGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], MovieGrid);
