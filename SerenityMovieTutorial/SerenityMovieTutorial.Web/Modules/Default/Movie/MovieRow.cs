@@ -73,7 +73,7 @@ namespace SerenityMovieTutorial.Default.Entities
 
         [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
         // [LookupEditor("DefaultDB.Genre")] //While defining [LookupEditor] we hardcoded the lookup key. It's also possible to reuse information on GenreRow:
-        [LookupEditor(typeof(GenreRow))]
+        [LookupEditor(typeof(GenreRow), InplaceAdd = true)]
         public Int32? GenreId
         {
             get => Fields.GenreId[this];

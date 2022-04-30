@@ -402,9 +402,9 @@ var SerenityMovieTutorial;
             GenreRow.idProperty = 'GenreId';
             GenreRow.nameProperty = 'Name';
             GenreRow.localTextPrefix = 'Default.Genre';
-            GenreRow.lookupKey = 'DefaultDB.Genre';
+            GenreRow.lookupKey = 'Default.Genre';
             function getLookup() {
-                return Q.getLookup('DefaultDB.Genre');
+                return Q.getLookup('Default.Genre');
             }
             GenreRow.getLookup = getLookup;
             GenreRow.deletePermission = 'Administration:General';

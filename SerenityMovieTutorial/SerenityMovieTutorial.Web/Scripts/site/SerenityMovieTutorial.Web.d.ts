@@ -460,7 +460,7 @@ declare namespace SerenityMovieTutorial.Default {
         const idProperty = "GenreId";
         const nameProperty = "Name";
         const localTextPrefix = "Default.Genre";
-        const lookupKey = "DefaultDB.Genre";
+        const lookupKey = "Default.Genre";
         function getLookup(): Q.Lookup<GenreRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
