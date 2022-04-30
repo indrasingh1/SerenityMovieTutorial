@@ -1,4 +1,5 @@
 ﻿using Serenity.Navigation;
 using MyPages = SerenityMovieTutorial.Default.Pages;
 
-[assembly: NavigationLink(int.MaxValue, "Default/Movie", typeof(MyPages.MovieController), icon: null)]
+[assembly: NavigationMenu(10000, "Movie Database", icon: "fa-bullhorn")]
+[assembly: NavigationLink(10001, "Movie Database/Movie", typeof(MyPages.MovieController), icon: "fa-video-camera")]
