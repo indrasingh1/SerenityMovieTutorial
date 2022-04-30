@@ -439,6 +439,72 @@ declare namespace SerenityMovieTutorial.Common {
         Value?: string;
     }
 }
+declare namespace SerenityMovieTutorial.Default {
+}
+declare namespace SerenityMovieTutorial.Default {
+    interface MovieForm {
+        Title: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        Storyline: Serenity.StringEditor;
+        Year: Serenity.IntegerEditor;
+        ReleaseDate: Serenity.DateEditor;
+        Runtime: Serenity.IntegerEditor;
+        Kind: Serenity.IntegerEditor;
+    }
+    class MovieForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    interface MovieRow {
+        MovieId?: number;
+        Title?: string;
+        Description?: string;
+        Storyline?: string;
+        Year?: number;
+        ReleaseDate?: string;
+        Runtime?: number;
+        Kind?: number;
+    }
+    namespace MovieRow {
+        const idProperty = "MovieId";
+        const nameProperty = "Title";
+        const localTextPrefix = "Default.Movie";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            MovieId = "MovieId",
+            Title = "Title",
+            Description = "Description",
+            Storyline = "Storyline",
+            Year = "Year",
+            ReleaseDate = "ReleaseDate",
+            Runtime = "Runtime",
+            Kind = "Kind"
+        }
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    namespace MovieService {
+        const baseUrl = "Default/Movie";
+        function Create(request: Serenity.SaveRequest<MovieRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MovieRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MovieRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MovieRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Default/Movie/Create",
+            Update = "Default/Movie/Update",
+            Delete = "Default/Movie/Delete",
+            Retrieve = "Default/Movie/Retrieve",
+            List = "Default/Movie/List"
+        }
+    }
+}
 declare namespace SerenityMovieTutorial {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -994,6 +1060,30 @@ declare namespace SerenityMovieTutorial.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    class MovieDialog extends Serenity.EntityDialog<MovieRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: MovieForm;
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    class MovieGrid extends Serenity.EntityGrid<MovieRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MovieDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace SerenityMovieTutorial.Membership {

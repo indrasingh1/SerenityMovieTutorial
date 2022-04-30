@@ -7404,3 +7404,9 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
+.s-Default-MovieDialog > .size {
+  width: 650px;
+}
+.s-Default-MovieDialog .caption {
+  width: 150px;
+}
