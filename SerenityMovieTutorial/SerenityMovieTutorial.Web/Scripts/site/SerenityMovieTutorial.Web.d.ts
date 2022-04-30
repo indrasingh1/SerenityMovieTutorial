@@ -449,12 +449,19 @@ declare namespace SerenityMovieTutorial.Default {
         Year: Serenity.IntegerEditor;
         ReleaseDate: Serenity.DateEditor;
         Runtime: Serenity.IntegerEditor;
-        Kind: Serenity.IntegerEditor;
+        Kind: Serenity.EnumEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
         private static init;
         constructor(prefix: string);
+    }
+}
+declare namespace SerenityMovieTutorial.Default {
+    enum MovieKind {
+        Film = 1,
+        TvSeries = 2,
+        MiniSeries = 3
     }
 }
 declare namespace SerenityMovieTutorial.Default {

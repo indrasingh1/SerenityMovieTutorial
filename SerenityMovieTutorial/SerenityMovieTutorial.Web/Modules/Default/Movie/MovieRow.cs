@@ -64,7 +64,7 @@ namespace SerenityMovieTutorial.Default.Entities
             set { Fields.Runtime[this] = value; }
         }
 
-        [DisplayName("Kind"), NotNull]
+        [DisplayName("Kind"), NotNull, DefaultValue(MovieKind.Film)]
         public Int32? Kind
         {
             get { return Fields.Kind[this]; }

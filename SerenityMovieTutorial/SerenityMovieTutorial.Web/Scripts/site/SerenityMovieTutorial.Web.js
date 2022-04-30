@@ -384,6 +384,7 @@ var SerenityMovieTutorial;
                     var w1 = s.TextAreaEditor;
                     var w2 = s.IntegerEditor;
                     var w3 = s.DateEditor;
+                    var w4 = s.EnumEditor;
                     Q.initFormType(MovieForm, [
                         'Title', w0,
                         'Description', w1,
@@ -391,7 +392,7 @@ var SerenityMovieTutorial;
                         'Year', w2,
                         'ReleaseDate', w3,
                         'Runtime', w2,
-                        'Kind', w2
+                        'Kind', w4
                     ]);
                 }
                 return _this;
@@ -400,6 +401,19 @@ var SerenityMovieTutorial;
             return MovieForm;
         }(Serenity.PrefixedContext));
         Default.MovieForm = MovieForm;
+    })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
+})(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
+var SerenityMovieTutorial;
+(function (SerenityMovieTutorial) {
+    var Default;
+    (function (Default) {
+        var MovieKind;
+        (function (MovieKind) {
+            MovieKind[MovieKind["Film"] = 1] = "Film";
+            MovieKind[MovieKind["TvSeries"] = 2] = "TvSeries";
+            MovieKind[MovieKind["MiniSeries"] = 3] = "MiniSeries";
+        })(MovieKind = Default.MovieKind || (Default.MovieKind = {}));
+        Serenity.Decorators.registerEnumType(MovieKind, 'SerenityMovieTutorial.Default.MovieKind', 'MovieDB.MovieKind');
     })(Default = SerenityMovieTutorial.Default || (SerenityMovieTutorial.Default = {}));
 })(SerenityMovieTutorial || (SerenityMovieTutorial = {}));
 var SerenityMovieTutorial;

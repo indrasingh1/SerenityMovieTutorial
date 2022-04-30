@@ -24,6 +24,6 @@ namespace SerenityMovieTutorial.Default.Columns
 
         [DisplayName("Runtime in Minutes"), AlignRight]
         public Int32 Runtime { get; set; }
-        public Int32 Kind { get; set; }
+        public MovieKind Kind { get; set; }
     }
 }
