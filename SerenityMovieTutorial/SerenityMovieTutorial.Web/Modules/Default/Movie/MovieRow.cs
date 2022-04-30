@@ -71,6 +71,22 @@ namespace SerenityMovieTutorial.Default.Entities
             set { Fields.Kind[this] = value; }
         }
 
+        [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
+        // [LookupEditor("DefaultDB.Genre")] //While defining [LookupEditor] we hardcoded the lookup key. It's also possible to reuse information on GenreRow:
+        [LookupEditor(typeof(GenreRow))]
+        public Int32? GenreId
+        {
+            get => Fields.GenreId[this];
+            set => Fields.GenreId[this] = value;
+        }
+
+        [DisplayName("Genre"), Expression("g.Name")]
+        public String GenreName
+        {
+            get => Fields.GenreName[this];
+            set => Fields.GenreName[this] = value;
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.MovieId; }
@@ -98,6 +114,8 @@ namespace SerenityMovieTutorial.Default.Entities
             public DateTimeField ReleaseDate;
             public Int32Field Runtime;
             public Int32Field Kind;
+            public Int32Field GenreId;
+            public StringField GenreName;
         }
     }
 }

@@ -8,6 +8,11 @@
         export const idProperty = 'GenreId';
         export const nameProperty = 'Name';
         export const localTextPrefix = 'Default.Genre';
+        export const lookupKey = 'DefaultDB.Genre';
+
+        export function getLookup(): Q.Lookup<GenreRow> {
+            return Q.getLookup<GenreRow>('DefaultDB.Genre');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';

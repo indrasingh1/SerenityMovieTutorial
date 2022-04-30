@@ -21,7 +21,8 @@ namespace SerenityMovieTutorial.Default.Columns
         public String Storyline { get; set; }
         public Int32 Year { get; set; }
         public DateTime ReleaseDate { get; set; }
-
+        [Width(100)]
+        public String GenreName { get; set; }
         [DisplayName("Runtime in Minutes"), AlignRight]
         public Int32 Runtime { get; set; }
         public MovieKind Kind { get; set; }

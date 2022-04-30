@@ -13,6 +13,7 @@ namespace SerenityMovieTutorial.Default.Entities
     [DisplayName("Genre"), InstanceName("Genre")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("DefaultDB.Genre")]
     public sealed class GenreRow : Row, IIdRow, INameRow
     {
         [DisplayName("Genre Id"), Identity]

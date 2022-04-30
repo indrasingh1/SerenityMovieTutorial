@@ -460,6 +460,8 @@ declare namespace SerenityMovieTutorial.Default {
         const idProperty = "GenreId";
         const nameProperty = "Name";
         const localTextPrefix = "Default.Genre";
+        const lookupKey = "DefaultDB.Genre";
+        function getLookup(): Q.Lookup<GenreRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -497,6 +499,7 @@ declare namespace SerenityMovieTutorial.Default {
         Year: Serenity.IntegerEditor;
         ReleaseDate: Serenity.DateEditor;
         Runtime: Serenity.IntegerEditor;
+        GenreId: Serenity.LookupEditor;
         Kind: Serenity.EnumEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
@@ -522,6 +525,8 @@ declare namespace SerenityMovieTutorial.Default {
         ReleaseDate?: string;
         Runtime?: number;
         Kind?: number;
+        GenreId?: number;
+        GenreName?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -539,7 +544,9 @@ declare namespace SerenityMovieTutorial.Default {
             Year = "Year",
             ReleaseDate = "ReleaseDate",
             Runtime = "Runtime",
-            Kind = "Kind"
+            Kind = "Kind",
+            GenreId = "GenreId",
+            GenreName = "GenreName"
         }
     }
 }
